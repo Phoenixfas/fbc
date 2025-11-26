@@ -25,8 +25,8 @@ export default function Blogs_Subs() {
         <div className='w-full flex justify-center flex-wrap gap-8' >
             <Link href='/dashboard/blog' className='flex-1' title='blog'>
                 <div className="min-w-72  h-40 p-5 rounded-xl bg-white gap-3 hover:shadow-xl flex flex-col items-center justify-center">
-                    <div className="text-6xl text-[#050752] font-bold">{blogs}</div>
-                    <div className="text-2xl text-gray-600 text-center font-light">Blogs Written</div>
+                    <div className="text-6xl text-[var(--primary)] font-bold">{blogs}</div>
+                    <div className="text-2xl text-background text-center font-light">Blogs Written</div>
                 </div>
             </Link>
             {/* <Link href='/dashboard/newsletter' className='flex-1' title='newsletter'>

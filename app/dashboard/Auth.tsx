@@ -43,10 +43,10 @@ export default function Auth({ children }: Props) {
   }, [token])
 
   return (
-    <div className='bg-[#eee]'>
+    <div className='bg-background'>
       {loggedIn ? notExpired ? <div className="flex overflow-hidden">
         <Sidebar />
-        <div className="h-screen flex-1 overflow-y-scroll">
+        <div className="h-screen flex-1 overflow-y-scroll w-full overflow-x-hidden">
           <Header />
           {children}
           {/* <Footer /> */}

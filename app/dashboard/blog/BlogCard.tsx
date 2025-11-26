@@ -37,7 +37,7 @@ export default function BlogCard({ d }: BlogCardProps) {
             <Image className='h-full w-1/3 object-cover' src={blog.image} alt={blog.title.slice(0, 20)} width={200} height={200} priority />
             <div className='h-full flex-1 flex flex-col justify-between p-4 gap-2'>
               <div className='text-sm text-black font-bold'>{blog.title.slice(0, 30)}</div>
-              <div className='text-[#4EAEE5] text-sm cursor-pointer' onClick={() => {
+              <div className='text-[var(--primary)] text-sm cursor-pointer' onClick={() => {
                 dispatch(toggleBlogModal())
                 dispatch(changeActiveBlog(blog))
               }}>view blog</div>
@@ -49,7 +49,7 @@ export default function BlogCard({ d }: BlogCardProps) {
             <Image className='h-full w-1/3 object-cover' src={blog.image} alt={blog.title.slice(0, 20)} width={200} height={200} priority />
             <div className='h-full flex-1 flex flex-col justify-between p-4 gap-2'>
               <div className='text-sm text-black font-bold'>{blog.title.slice(0, 30)}</div>
-              <div className='text-[#4EAEE5] text-sm cursor-pointer' onClick={() => {
+              <div className='text-[var(--primary)] text-sm cursor-pointer' onClick={() => {
                 dispatch(toggleBlogModal())
                 dispatch(changeActiveBlog(blog))
               }}>view blog</div>

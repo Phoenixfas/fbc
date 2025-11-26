@@ -62,7 +62,7 @@ export default function EditBlogModal() {
         const img: File = imageInput.files[0];
         const imgData = new FormData()
         imgData.append('file', img)
-        imgData.append('upload_preset', 'impact')
+        imgData.append('upload_preset', 'fbc_upload')
 
         const res = await fetch('https://api.cloudinary.com/v1_1/drp73bqti/image/upload', {
             method: 'POST',

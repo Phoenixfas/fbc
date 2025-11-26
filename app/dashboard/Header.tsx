@@ -14,7 +14,7 @@ export default function Header() {
 
   return (
     <div className='h-16 w-full relative'>
-      <div className='h-full w-1/2 rounded-l-full bg-[linear-gradient(to_top_right,_var(--tertiary),_var(--secondary),_var(--primary))] shadow-lg float-right flex justify-end items-center px-10'>
+      <div className='h-full w-1/2 rounded-l-full bg-[var(--primary)] shadow-lg float-right flex justify-end items-center px-10'>
         <div className='header_admin' >
           <FaUserCircle className='text-white text-[40px]' title='admin' />
           <div className='header_adminContent'>

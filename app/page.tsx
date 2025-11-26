@@ -1,5 +1,10 @@
 import Image from "next/image";
+import Hero from "./Hero";
 
 export default function Home() {
-  return <div className="w-full relative overflow-hidden"></div>;
+  return (
+    <div className="w-full min-h-[150vh] relative overflow-hidden">
+      <Hero />
+    </div>
+  );
 }

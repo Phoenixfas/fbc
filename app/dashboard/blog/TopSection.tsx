@@ -12,8 +12,8 @@ export default function TopSection() {
     return (
         <div className='w-full h-20 mb-10 flex items-center justify-between top-section'>
             <div>
-                <h1 className='text-3xl text-black font-bold mb-3'>Blogs</h1>
-                <p className='text-sm text-gray-700'>List of all blogs written</p>
+                <h1 className='text-3xl text-white font-bold mb-3'>Blogs</h1>
+                <p className='text-sm text-gray-300'>List of all blogs written</p>
             </div>
 
             <div className='flex-1 flex items-center justify-end gap-10 top-section-r'>
@@ -24,7 +24,7 @@ export default function TopSection() {
                     <option value="oldest" >Oldest</option>
                 </select>
             </div> */}
-                <div className='px-4 h-[40px] bg-[#4EAEE5] hover:bg-white hover:text-[#4EAEE5] text-white duration-300 cursor-pointer flex items-center gap-3 rounded-full' onClick={() => dispatch(toggleBlogAddModal())}>
+                <div className='px-4 h-[40px] bg-[var(--primary)] hover:bg-white hover:text-[var(--primary)] text-white duration-300 cursor-pointer flex items-center gap-3 rounded-full' onClick={() => dispatch(toggleBlogAddModal())}>
                     <AiFillFileAdd className='text-2xl' />
                     <p className='text-sm font-light'>Add Blog</p>
                 </div>
