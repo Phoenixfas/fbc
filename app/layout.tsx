@@ -4,6 +4,7 @@ import "../styles/globals.css";
 import ProviderWrapper from "../components/ProviderWrapper";
 import Navbar from "@/components/Navbar";
 import TabsBar from "@/components/TabsBar";
+import FloatingChatBot from "@/components/FloatingChatBot";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -13,6 +14,7 @@ const montserrat = Montserrat({
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://thefbc.xyz';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   // TITLE: Includes the brand name + primary keyword + location for high relevance
   title: {
     default: 'Foundation Business Consultancy | Business Setup, Tax & Audit UAE',
@@ -116,6 +118,7 @@ export default function RootLayout({
             <Navbar />
             <TabsBar />
             {children}
+            <FloatingChatBot />
             {/* <Footer /> */}
           </div>
         </ProviderWrapper>

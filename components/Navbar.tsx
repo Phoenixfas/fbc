@@ -31,19 +31,19 @@ export default function Navbar() {
 
     return (
         <>
-            <div className={`fixed ${screenWidth >= 1280 && scrollY > 100 ? "-translate-y-full" : ""} top-0 left-0 w-full flex justify-between items-center gap-10 px-5 sm:px-10 md:px-20 py-4 sm:py-7 text-lg text-nowrap font-normal border-b border-background ${drawerOpen ? "bg-foreground" : "bg-black"} z-99999 duration-500`}>
+            <div className={`fixed ${screenWidth >= 1280 && scrollY > 100 ? "-translate-y-full" : ""} top-0 left-0 w-full flex justify-between items-center gap-10 px-5 sm:px-10 md:px-20 py-4 sm:py-7 text-lg text-nowrap font-normal border-b border-background ${drawerOpen ? "bg-foreground" : scrollY > 100 ? "bg-black" : "bg-transparent"} z-99999 duration-500`}>
                 <Link href="/" className='flex-1 h-[50px] flex'>
                     <Image src="/logo/full_o.svg" alt="Foundation Business Consulting" width={200} height={50} className='object-contain' />
                 </Link>
-                <div className='hidden xl:flex flex-1 items-center justify-center gap-8'>
-                    <Link href="/" className='text-white hover:text-(--primary) duration-500'>ABOUT</Link>
-                    <Link href="/" className='text-white hover:text-(--primary) duration-500'>SERVICES</Link>
-                    <Link href="/" className='text-white hover:text-(--primary) duration-500'>OUR CLIENTS</Link>
-                    <Link href="/" className='text-white hover:text-(--primary) duration-500'>BLOGS</Link>
+                <div className='hidden xl:flex flex-1 items-center justify-center gap-5'>
+                    <Link href="#about" className='text-white hover:text-(--primary) duration-500'>ABOUT</Link>
+                    <Link href="#services" className='text-white hover:text-(--primary) duration-500'>SERVICES</Link>
+                    <Link href="#clients" className='text-white hover:text-(--primary) duration-500'>OUR CLIENTS</Link>
+                    <Link href="#blogs" className='text-white hover:text-(--primary) duration-500'>BLOGS</Link>
                 </div>
                 <div className='hidden xl:flex flex-1 items-center justify-end gap-3'>
-                    <Link href="/" className='text-white px-5 py-3 border border-background rounded-xl hover:bg-(--primary) hover:border-(--primary) hover:shadow-[0_0_10px_var(--primary)] duration-500'>CONTACT US</Link>
-                    <Link href="/" className='text-white px-5 py-3 border border-background rounded-xl bg-background hover:bg-(--primary) hover:border-(--primary) hover:shadow-[0_0_10px_var(--primary)] duration-500'>REQUEST A QUOTE</Link>
+                    <Link href="#contact" className='text-white px-5 py-3 border border-background rounded-xl hover:bg-(--primary) hover:border-(--primary) hover:shadow-[0_0_10px_var(--primary)] duration-500'>CONTACT US</Link>
+                    <Link href="#request-a-quote" className='text-white px-5 py-3 border border-background rounded-xl bg-background hover:bg-(--primary) hover:border-(--primary) hover:shadow-[0_0_10px_var(--primary)] duration-500'>REQUEST A QUOTE</Link>
                 </div>
                 <div className={`flex xl:hidden p-2 rounded-xl items-center justify-center cursor-pointer ${drawerOpen ? "bg-background/20 text-black" : "bg-background text-foreground"} hover:border-(--primary) duration-500`} onClick={() => setDrawerOpen(!drawerOpen)}>
                     {drawerOpen ? <IoClose className="text-3xl" /> : <HiOutlineMenuAlt3 className="text-3xl" />}

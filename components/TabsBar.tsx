@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 export default function TabsBar() {
     const tabs = useMemo(() => [
-        { id: 0, content: 'ABOUT', pathname: 'about' },
-        { id: 1, content: 'SERVICES', pathname: 'services' },
-        { id: 2, content: 'OUR CLIENTS', pathname: 'clients' },
-        { id: 3, content: 'BLOGS', pathname: 'blogs' },
+        { id: 0, content: 'ABOUT', pathname: '#about' },
+        { id: 1, content: 'SERVICES', pathname: '#services' },
+        { id: 2, content: 'OUR CLIENTS', pathname: '#clients' },
+        { id: 3, content: 'BLOGS', pathname: '#blogs' },
     ], [])
 
     const [scrollY, setScrollY] = useState(0);
@@ -35,11 +35,11 @@ export default function TabsBar() {
                 <FaArrowUp />
             </div>
             {tabs.map((tab, index) => (
-                <Link key={index} href={"/" + tab.pathname} className={`py-2 px-4 rounded-[10px] hover:bg-(--primary) text-lg font-light border border-foreground/20 hover:border-(--primary) text-foreground text-nowrap duration-500`}>
+                <Link key={index} href={tab.pathname} className={`py-2 px-4 rounded-[10px] hover:bg-(--primary) text-lg font-light border border-foreground/20 hover:border-(--primary) text-foreground text-nowrap duration-500`}>
                     {tab.content}
                 </Link>
             ))}
-            <Link href="/request-a-quote" className={`py-2 px-4 rounded-[10px] bg-(--primary) text-lg font-light border border-(--primary) text-foreground hover:shadow-[0_0_10px_var(--primary)] text-nowrap duration-500`}>
+            <Link href="#request-a-quote" className={`py-2 px-4 rounded-[10px] bg-(--primary) text-lg font-light border border-(--primary) text-foreground hover:shadow-[0_0_10px_var(--primary)] text-nowrap duration-500`}>
                 REQUEST A QUOTE
             </Link>
         </div>

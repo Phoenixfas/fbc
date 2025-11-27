@@ -37,11 +37,30 @@
   }
 }
 
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #000;
   color: var(--foreground);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(45deg, var(--tertiary) 20%, var(--primary) 25%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* text-shadow: 0 5px 10px #dddd19; */
+}
+.hero-gradient-text-2 {
+  background: linear-gradient(180deg, var(--tertiary) 30%, var(--primary) 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* text-shadow: 0 5px 10px #dddd19; */
 }
 
 /* ////////////////////////////////  BLOG  ////////////////////////////////// */
