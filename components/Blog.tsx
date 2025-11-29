@@ -97,7 +97,7 @@ export function Blog() {
     };
 
     return (
-        <section className="pt-24 bg-[#000000] relative overflow-hidden">
+        <section id="blogs" className="pt-24 bg-[#000000] relative overflow-hidden">
             {/* Background decorations */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff6500]/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#f68e1e]/5 rounded-full blur-3xl" />

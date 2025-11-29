@@ -16,7 +16,7 @@ export function ContactSection() {
     const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
     return (
-        <div ref={containerRef} className="relative flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
+        <div id="contact" ref={containerRef} className="relative flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
             {/* <FloatingIcons /> */}
 
             <motion.div

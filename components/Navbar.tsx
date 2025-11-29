@@ -52,7 +52,7 @@ export default function Navbar() {
             <div className={`fixed top-0 left-0 ${drawerOpen ? "translate-y-0" : "-translate-y-full"} w-full h-full bg-foreground z-99998 duration-500`}>
                 <div className={`relative flex items-center gap-1 rounded-xl bg-background p-[3px] duration-300`}>
                     {tabs.map((tab, index) => (
-                        <Link key={index} href={"/" + tab.pathname} className={`py-2 px-4 rounded-[10px] hover:bg-(--primary) text-lg font-light border border-foreground/20 hover:border-(--primary) text-foreground text-nowrap duration-500`}>
+                        <Link key={index} href={"#" + tab.pathname} className={`py-2 px-4 rounded-[10px] hover:bg-(--primary) text-lg font-light border border-foreground/20 hover:border-(--primary) text-foreground text-nowrap duration-500`}>
                             {tab.content}
                         </Link>
                     ))}

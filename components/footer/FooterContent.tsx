@@ -1,19 +1,22 @@
 'use client';
 import { motion } from 'motion/react';
-import { Building2, Briefcase, Users, FileText, Phone, MapPin, Mail, Linkedin, Twitter, Facebook, Instagram } from 'lucide-react';
+import { Building2, Briefcase, Users, FileText, Phone, MapPin, Mail, Linkedin, Twitter, Facebook, Instagram, X } from 'lucide-react';
 import { useState } from 'react';
+import { FaXTwitter } from 'react-icons/fa6';
+import Image from 'next/image';
 
 const footerSections = [
   {
     title: 'Services',
     icon: Briefcase,
     links: [
-      'Business Strategy',
-      'Financial Consulting',
-      'Operations Management',
-      'Market Research',
-      'Digital Transformation',
-      'Risk Management',
+      'Company Formation',
+      'CFO Services',
+      'Accounting & Bookkeeping',
+      'Tax Services',
+      'Audit Services',
+      'Advisory Services',
+      'Business Support & PRO Services'
     ],
   },
   {
@@ -21,23 +24,21 @@ const footerSections = [
     icon: Building2,
     links: [
       'About Us',
-      'Our Team',
-      'Careers',
-      'Case Studies',
-      'Testimonials',
-      'Partners',
+      'Services',
+      'Our Clients',
+      'Blogs / Insights',
+      'Contact Us',
     ],
   },
   {
     title: 'Resources',
     icon: FileText,
     links: [
-      'Blog',
-      'Insights',
-      'Whitepapers',
-      'Events',
-      'FAQ',
-      'Support',
+      'Tax',
+      'Formations',
+      'Advisory',
+      'Audit',
+      'Accounting',
     ],
   },
 ];
@@ -50,7 +51,7 @@ const contactInfo = [
 
 const socialLinks = [
   { icon: Linkedin, name: 'LinkedIn', href: '#' },
-  { icon: Twitter, name: 'Twitter', href: '#' },
+  { icon: FaXTwitter, name: 'Twitter', href: '#' },
   { icon: Facebook, name: 'Facebook', href: '#' },
   { icon: Instagram, name: 'Instagram', href: '#' },
 ];
@@ -73,9 +74,9 @@ export function FooterContent() {
           whileHover={{ scale: 1.02 }}
           className="mb-6"
         >
-          <h3 className="text-2xl md:text-3xl mb-2" style={{ color: '#ff6500' }}>
-            Foundation Business Consultancy
-          </h3>
+          <div className="mb-5">
+            <Image src="/logo/full_o.svg" alt="Foundation Business Consulting" width={300} height={100} className='object-contain' />
+          </div>
           <motion.div
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}

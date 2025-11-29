@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'motion/react';
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Circle } from 'lucide-react';
 import { useState } from 'react';
 
 export function FooterBottom() {
@@ -57,13 +57,13 @@ export function FooterBottom() {
               ease: "easeInOut",
             }}
           >
-            <Heart size={16} color="#ff6500" fill="#ff6500" />
+            <Circle size={16} color="#ff6500" fill="#ff6500" />
           </motion.div>
         </div>
 
         {/* Legal Links */}
         <div className="flex items-center gap-6">
-          {['Privacy Policy', 'Terms of Service', 'Cookies'].map((item, index) => (
+          {['Privacy Policy'].map((item, index) => (
             <motion.a
               key={index}
               href="#"
@@ -85,7 +85,7 @@ export function FooterBottom() {
       </motion.div>
 
       {/* Scroll to Top Button */}
-      <motion.button
+      {/* <motion.button
         initial={{ opacity: 0, scale: 0 }}
         animate={{
           opacity: showScrollTop ? 1 : 0,
@@ -112,10 +112,10 @@ export function FooterBottom() {
           }}
         >
           <ArrowUp size={24} color="#ffffff" />
-        </motion.div>
+        </motion.div> */}
 
-        {/* Pulse Ring */}
-        <motion.div
+      {/* Pulse Ring */}
+      {/* <motion.div
           className="absolute inset-0 rounded-full"
           style={{
             border: '2px solid #ff6500',
@@ -129,7 +129,7 @@ export function FooterBottom() {
             repeat: Infinity,
           }}
         />
-      </motion.button>
+      </motion.button> */}
     </>
   );
 }

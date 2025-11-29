@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 export default function Hero() {
@@ -25,11 +26,11 @@ export default function Hero() {
                 <div className="flex items-end">
                     <h3 className='text-[9rem] leading-26 font-bold hero-gradient-text-2 align-bottom mr-5'>82<span className='text-7xl'>%</span></h3>
                     <p className='max-w-[250px] text-xl text-foreground'>of small businesses fail from poor cash flow</p>
-                    <div className="p-1 bg-foreground/10 backdrop-blur-3xl rounded-lg border border-foreground/20">
-                        <div className="w-32 p-2 bg-[linear-gradient(-30deg,_#2f3032_40%,_#2f303255_60%)]  rounded-lg">
-                            <p className='flex flex-col gap-1 text-base leading-[1.1rem] text-foreground uppercase font-bold'>find your success <span className='text-(--primary) text-2xl'>score</span></p>
+                    <Link href={"/"} className="p-1 bg-foreground/10 backdrop-blur-3xl rounded-lg border border-foreground/20 hover:scale-105 duration-300">
+                        <div className=" p-2 bg-[linear-gradient(-30deg,_#2f3032_40%,_#2f303255_60%)]  rounded-lg">
+                            <p className='flex flex-col gap-1 text-base leading-[1.1rem] text-foreground uppercase font-bold'><span>Book a 30<em className='lowercase'>min</em></span> <span className='text-(--primary) text-2xl'>Consultation</span></p>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

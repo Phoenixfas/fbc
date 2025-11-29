@@ -65,7 +65,7 @@ export default function Testimonials() {
     };
 
     return (
-        <div className="relative py-32 px-6 overflow-hidden bg-black">
+        <div id="clients" className="relative py-32 px-6 overflow-hidden bg-black">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div

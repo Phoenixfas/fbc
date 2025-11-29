@@ -30,7 +30,7 @@ export default function TabsBar() {
     }, []);
 
     return (
-        <div className={`fixed ${screenWidth >= 1280 && scrollY > 100 ? 'bottom-5' : 'bottom-0 translate-y-full'} left-1/2 -translate-x-1/2 z-[999999] flex items-center gap-1 rounded-xl bg-background p-[3px] duration-300`}>
+        <div className={`fixed ${screenWidth >= 1280 && window.scrollY < document.body.offsetHeight - window.innerHeight - 400 && scrollY > 100 ? 'bottom-5' : 'bottom-0 translate-y-full'} left-1/2 -translate-x-1/2 z-[999999] flex items-center gap-1 rounded-xl bg-background p-[3px] duration-300`}>
             <div className={`py-2 px-4 h-[45px] flex items-center justify-center rounded-[10px] bg-black text-lg font-light text-foreground/50 hover:text-foreground text-nowrap cursor-pointer duration-500`} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
                 <FaArrowUp />
             </div>
