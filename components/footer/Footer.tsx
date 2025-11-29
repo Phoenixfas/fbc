@@ -1,7 +1,7 @@
 'use client';
 import { motion } from 'motion/react';
 import { FooterContent } from './FooterContent';
-import { FooterNewsletter } from './FooterNewsletter';
+// import { FooterNewsletter } from './FooterNewsletter';
 import { FooterBottom } from './FooterBottom';
 
 export function Footer() {
@@ -65,7 +65,7 @@ export function Footer() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
-        <FooterNewsletter />
+        {/* <FooterNewsletter /> */}
 
         {/* Main Footer Content */}
         <FooterContent />
