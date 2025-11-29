@@ -1,7 +1,7 @@
 'use client'
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar"
-import Footer from "./Footer";
+import { Footer } from "./footer/Footer";
 import DisplayLogo from "./DisplayLogo";
 
 export default function Preloader({ children, }: { children: React.ReactNode }) {

@@ -5,6 +5,7 @@ import ProviderWrapper from "../components/ProviderWrapper";
 import Navbar from "@/components/Navbar";
 import TabsBar from "@/components/TabsBar";
 import FloatingChatBot from "@/components/FloatingChatBot";
+import { Footer } from "@/components/footer/Footer";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -119,7 +120,7 @@ export default function RootLayout({
             <TabsBar />
             {children}
             <FloatingChatBot />
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </ProviderWrapper>
       </body>

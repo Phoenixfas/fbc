@@ -140,7 +140,7 @@ export function Services() {
     };
 
     return (
-        <section id="services" className="relative py-24 px-6 overflow-hidden bg-gradient-to-b from-[#000000] to-[#2f3032]">
+        <section id="services" className="relative pt-24 px-6 overflow-hidden bg-gradient-to-b from-[#000000] via-[#2f3032] to-[#000000]">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <motion.div
@@ -207,7 +207,7 @@ export function Services() {
                             onClick={() => setExpandedService(expandedService === index ? null : index)}
                             className="relative group cursor-pointer"
                         >
-                            <div className="relative h-full p-8 rounded-2xl bg-[#2f3032] border border-[#ffffff]/5 overflow-hidden transition-all duration-500">
+                            <div className="relative h-full p-8 rounded-2xl bg-[#2f3032] shadow-[0_10px_10px_#00000088] border border-[#ffffff]/5 overflow-hidden transition-all duration-500">
                                 {/* Hover gradient overlay */}
                                 <div
                                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
@@ -301,7 +301,7 @@ export function Services() {
                 </motion.div>
 
                 {/* Call to Action */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -318,7 +318,7 @@ export function Services() {
                     <p className="mt-4 text-[#ffffff]/60">
                         Ready to build your foundation for success?
                     </p>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );

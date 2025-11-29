@@ -5,9 +5,12 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { IoChatboxEllipses } from "react-icons/io5";
 
-type Message = { role: "user" | "assistant"; content: string };
+type Message = { role: "user" | "model"; content: string };
 
-const SYSTEM_MESSAGE = `You are CLARITY, the official digital assistant of Foundation Business Consultancy (FBC).
+const SYSTEM_MESSAGE = {
+    parts: [
+        {
+            text: `You are CLARITY, the official digital assistant of Foundation Business Consultancy (FBC).
     Your purpose is to provide direction, confidence, and high-level guidance to users about company formation, accounting, tax, audit, advisory, business support, and general business topics in the UAE and KSA.
 
     You must follow these rules at all times:
@@ -135,7 +138,10 @@ const SYSTEM_MESSAGE = `You are CLARITY, the official digital assistant of Found
 
     10. Primary Objective
 
-    Your ultimate purpose is to help users understand, orient, and take confident next steps, while ensuring they are safely redirected to FBC professionals whenever the topic requires expertise, compliance, or tailored advice. also ensure to make your responses as concise as possible.`;
+    Your ultimate purpose is to help users understand, orient, and take confident next steps, while ensuring they are safely redirected to FBC professionals whenever the topic requires expertise, compliance, or tailored advice. also ensure to make your responses as concise as possible.`
+        }
+    ]
+}
 
 export default function FloatingChatBot() {
     const [open, setOpen] = useState(false);
@@ -170,21 +176,23 @@ export default function FloatingChatBot() {
         setInput("");
         setLoading(true);
 
+        const requestBody = {
+            system_instruction: SYSTEM_MESSAGE,
+            contents: [...messages, userMsg].map((msg) => ({ role: msg.role, parts: [{ text: msg.content }] })),
+        };
+
         try {
             const res = await fetch("/api/gemini", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    system: SYSTEM_MESSAGE,
-                    messages: [userMsg],
-                }),
+                body: JSON.stringify(requestBody),
             });
 
             const data = await res.json();
             const reply = data?.reply ?? "Sorry, I couldn't get a reply.";
-            setMessages((m) => [...m, { role: "assistant", content: reply }]);
+            setMessages((m) => [...m, { role: "model", content: reply }]);
         } catch (err) {
-            setMessages((m) => [...m, { role: "assistant", content: "Error contacting assistant." }]);
+            setMessages((m) => [...m, { role: "model", content: "Error contacting assistant." }]);
         } finally {
             setLoading(false);
         }
@@ -208,7 +216,7 @@ export default function FloatingChatBot() {
                                 <div className="font-semibold">CLARITY</div>
                                 <button
                                     aria-label="Close chat"
-                                    onClick={() => { setOpen(false); setMessages([]); }}
+                                    onClick={() => { setOpen(false); }}
                                     className="opacity-90 hover:opacity-100"
                                 >
                                     ✕
@@ -225,7 +233,7 @@ export default function FloatingChatBot() {
                                             className={`inline-block px-3 py-2 rounded-lg max-w-[80%] ${m.role === "user" ? "bg-(--secondary) text-white" : "bg-white text-slate-800 border"
                                                 }`}
                                         >
-                                            {m.role === "assistant" ? (
+                                            {m.role === "model" ? (
                                                 <div className="prose prose-sm">
                                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>{m.content}</ReactMarkdown>
                                                 </div>

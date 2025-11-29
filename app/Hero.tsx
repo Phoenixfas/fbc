@@ -16,9 +16,9 @@ export default function Hero() {
 
             <div className="relative w-full h-full px-5 sm:px-10 md:px-20 pt-40">
                 <h1 className="w-fit flex flex-col text-6xl font-bold uppercase mb-5">
-                    <span className='relative hero-gradient-text'><Image className='absolute top-0 left-0 -translate-x-full ' src={"/logo/quote.svg"} alt='quotation' width={20 * 1.5} height={13 * 1.5} /> from</span>
-                    <span className='relative hero-gradient-text'>unknown</span>
-                    <span className='relative hero-gradient-text'>to known <Image className='absolute top-0 right-0 translate-x-full rotate-y-180' src={"/logo/quote.svg"} alt='quotation' width={20 * 1.5} height={13 * 1.5} /> </span>
+                    <span className='relative hero-gradient-text'><Image className='absolute top-0 left-0 -translate-x-full ' src={"/logo/quote.svg"} alt='quotation' width={20 * 1.5} height={13 * 1.5} /> Focus.</span>
+                    <span className='relative hero-gradient-text'>Build.</span>
+                    <span className='relative hero-gradient-text'>Conquer. <Image className='absolute top-0 right-0 translate-x-full rotate-y-180' src={"/logo/quote.svg"} alt='quotation' width={20 * 1.5} height={13 * 1.5} /> </span>
                 </h1>
                 <h3 className="max-w-[300px] text-xl text-foreground font-light mb-20">Turning financial confusions lead to strategic decisions.</h3>
 
